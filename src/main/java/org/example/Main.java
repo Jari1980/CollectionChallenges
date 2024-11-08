@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +16,9 @@ public class Main {
                     case 2:
                         challenge2();
                         break;
+                    case 3:
+                        challenge3();
+                        break;
                     default:
                         System.out.println("There is no such challenge.");
                         break;
@@ -30,6 +30,44 @@ public class Main {
             }
         }
     }
+    public static void challenge3(){
+        System.out.println("Creating a new class SuperHero, adding fields for id, name, age and getters/setter");
+        System.out.println("Implementing Comparable interface and overriding method in order to compare age");
+        System.out.println("Creating arrayList of type SuperHero: ");
+        ArrayList<SuperHero> arrayList = new ArrayList<>();
+        System.out.println("Creating some heroes and adding them to arrList: ");
+        SuperHero jari = new SuperHero();
+        jari.setName("Jari");
+        jari.setAge(20);
+        jari.setId(1);
+        arrayList.add(jari);
+        SuperHero billy = new SuperHero();
+        billy.setName("Billy Gate");
+        billy.setAge(90);
+        billy.setId(2);
+        arrayList.add(billy);
+        SuperHero michel = new SuperHero();
+        michel.setName("Michel Jeckson");
+        michel.setId(3);
+        michel.setAge(60);
+        arrayList.add(michel);
+        SuperHero broccoli = new SuperHero();
+        broccoli.setName("Broccoli");
+        broccoli.setAge(5);
+        broccoli.setId(4);
+        arrayList.add(broccoli);
+        System.out.println("arrayList as is: ");
+        for(SuperHero element : arrayList){
+            System.out.println(element.getId() + " " + element.getName() + " " + element.getAge());
+        }
+        System.out.println("Sorting arrayList regarding age: ");
+        Collections.sort(arrayList);
+        System.out.println("arrayList sorted: ");
+        for(SuperHero element : arrayList){
+            System.out.println(element.getId() + " " + element.getName() + " " + element.getAge());
+        }
+    }
+
     public static void challenge2(){
         System.out.println("Creating hashMap of type <String,String>");
         HashMap<String, String> hashMap = new HashMap<>();
