@@ -1,5 +1,6 @@
 package org.example;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Main {
@@ -19,6 +20,9 @@ public class Main {
                     case 3:
                         challenge3();
                         break;
+                    case 4:
+                        challenge4();
+                        break;
                     default:
                         System.out.println("There is no such challenge.");
                         break;
@@ -30,6 +34,26 @@ public class Main {
             }
         }
     }
+    public static void challenge4(){
+        System.out.println("Creating int array arr with values 1,4,4,2,6,7 :");
+        int[] arr = {1, 4, 4, 2, 6, 7};
+        System.out.println("Creating arrayList and populating it with values from arr: ");
+        ArrayList<Integer> arrList = new ArrayList<>();
+        for(int i = 0; i < arr.length; i++){
+            arrList.add(arr[i]);
+        }
+        System.out.println("arrlist as is: " + arrList);
+        System.out.println("Elements in arrList w/o duplicates: ");
+        ArrayList<Integer> temp = new ArrayList<>();
+        for(Integer element : arrList){
+            if(!temp.contains(element)){
+                System.out.print(element + " ");
+                temp.add(element);
+            }
+        }
+        System.out.println();
+    }
+
     public static void challenge3(){
         System.out.println("Creating a new class SuperHero, adding fields for id, name, age and getters/setter");
         System.out.println("Implementing Comparable interface and overriding method in order to compare age");
